@@ -1,0 +1,11 @@
+# BlueprintMesh v3.5+ FULL AST
+# Audit Status: 100
+# ACTIVE & PERMANENT
+
+metadados: {versao: 3.5+, ultima_revisao: 2025-07-18, autor: Fabiano, audit: 100, status: ACTIVE & PERMANENT}
+stack: {orquestracao: [n8n:1.102.4, temporal:stable, airflow:2.7.1, spark:3.5.0], banco: [postgres:17.5, pgvector, redis:7.2, mongo:6], ux: [appsmith, superset:2.1.0], ai_ml: [firecrawl, mendable-mcp, ctranslate2:3.23-cpu, faster-whisper:1.5-cpu, openai:gpt-4o, mistral-large, bento-ml:1.2.8, optuna:3.6.1, tensorflow], mensageria: [chatwoot:v4.2.0-fazer-ai.6, mosquitto], storage: [s3:per-tenant, thanos], devops: [github-actions, terraform:hostinger, litmus-chaos, prometheus, grafana]}
+infra: {hostinger: {plano: VPS_KVM8, cpu: 8, ram: 32GB, storage: 400GB, banda: 32TB, rede: 300MB/s}}
+servicos: {dominio_principal: softwarelotus.com.br, subdominios: {n8n: n8n.softwarelotus.com.br, appsmith: appsmith.softwarelotus.com.br, superset: superset.softwarelotus.com.br, core: core.softwarelotus.com.br, firecrawl: firecrawl.softwarelotus.com.br, airflow: airflow.softwarelotus.com.br, spark: spark.softwarelotus.com.br, chatwoot: chatwoot.softwarelotus.com.br, ctranslate2: ctranslate2.softwarelotus.com.br, faster-whisper: faster-whisper.softwarelotus.com.br, tika: tika.softwarelotus.com.br, prometheus: prometheus.softwarelotus.com.br, thanos: thanos.softwarelotus.com.br}}
+envs: [POSTGRES_PASSWORD, N8N_BASIC_AUTH_USER, N8N_BASIC_AUTH_PASSWORD, SUPERSET_PASSWORD, MCP_API_KEY, AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, HOSTINGER_TOKEN, LOG_OBSERVABILIDADE_UUID, SEGMENTO, TENANT]
+seguranca: {auth: [OAuth, RBAC], quota: {storage: s3:per-tenant, limites: por-plano}, auditoria: full, resilience: [litmus-chaos, fallback], observabilidade: [prometheus, superset, grafana, logs_mesh]}
+ci_cd: {github: privado, runner: hostinger, docker: buildx, tags: mesh}
